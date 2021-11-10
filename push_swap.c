@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: trouger <trouger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 11:02:39 by trouger           #+#    #+#             */
-/*   Updated: 2021/11/02 13:30:04 by user42           ###   ########.fr       */
+/*   Updated: 2021/11/10 17:18:54 by trouger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,17 @@ int	main(int argc, char **argv)
 	stack.b = NULL;
 	if (!(ft_check_validity(argc, argv)))
 	{
-		write (2, "Error\n", 6);
+		write (1, "Error\n", 6);
 		ft_free(stack, NULL);
 		return (0);
 	}
 	stack = ft_fill_stack_a(stack, argc, argv);
+	if (!(ft_check_atoi(stack)))
+	{
+		write (1, "Error\n", 6);
+		ft_free(stack, NULL);
+		return (0);
+	}
 	push_swap(stack, ft_lstsize(stack.a) - 1);
 	return (0);
 }

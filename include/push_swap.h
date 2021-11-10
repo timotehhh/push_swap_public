@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: trouger <trouger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:19:24 by trouger           #+#    #+#             */
-/*   Updated: 2021/11/01 16:24:26 by user42           ###   ########.fr       */
+/*   Updated: 2021/11/10 17:20:35 by trouger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -118,5 +117,7 @@ t_stack	ft_mark_biggest(t_stack stack, int *index);
 t_stack	ft_push_biggest(t_stack stack, t_list *end, t_list *temp, int *index);
 t_list	*ft_lst_point_end(t_list *stack, int previous);
 t_list	*ft_find_smallest(t_stack stack, t_list *s, int *index);
+int		ft_check_right_form_str2(char *str, int i, int end);
+int		ft_check_atoi(t_stack stack);
 
 #endif
